@@ -14,18 +14,18 @@
  * }
  */
 class Solution {
-    List<Integer> treeList = new ArrayList<>();
+    List<Integer> treeList =  new ArrayList<>();
     public int countNodes(TreeNode root) {
-        trav(root);
-        return treeList.size();
+       inorder(root);
+       return treeList.size();
         
     }
-    void trav(TreeNode root){
+    private void inorder(TreeNode root){
         if(root == null){
             return;
         }
-        trav(root.left);
+        inorder(root.left);
         treeList.add(root.val);
-        trav(root.right);
+        inorder(root.right);
     }
 }
