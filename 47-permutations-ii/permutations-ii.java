@@ -17,9 +17,7 @@ class Solution {
             if(used[i] ==  true){
                 continue;
             }
-            //if(i > 0 && nums[i] == nums[i-1] && !used[i-1]){
-              //  continue;
-            //}
+           
             used[i] = true;
 
             current.add(nums[i]);
