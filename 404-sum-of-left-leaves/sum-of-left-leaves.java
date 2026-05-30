@@ -14,22 +14,22 @@
  * }
  */
 class Solution {
-    int ans =0;
+    int ans= 0;
     public int sumOfLeftLeaves(TreeNode root) {
-        sum(root);
+        
+        trav(root);
+
         return ans;
         
     }
-    void sum(TreeNode root){
-        if(root ==  null){
+    void trav(TreeNode root){
+        if(root == null){
             return;
         }
-        
-        if(root.left!= null && root.left.left== null && root.left.right ==  null){
-           ans += root.left.val;
+        if(root.left !=  null && root.left.left == null && root.left.right == null){
+            ans +=  root.left.val;
         }
-        sum(root.right);
-        sum(root.left);
-
+        trav(root.left);
+        trav(root.right);
     }
 }
