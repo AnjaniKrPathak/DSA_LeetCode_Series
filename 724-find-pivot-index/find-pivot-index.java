@@ -8,11 +8,11 @@ class Solution {
         }
 
         for(int i=0;i< nums.length;i++){
-            leftSum = totalSum -rightSum -nums[i];
+            rightSum = totalSum -leftSum -nums[i];
             if(leftSum == rightSum ){
                 return i;
             }
-            rightSum = totalSum -leftSum;
+            leftSum += nums[i];
         }
 
         return -1;
