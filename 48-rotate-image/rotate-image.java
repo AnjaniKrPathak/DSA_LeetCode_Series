@@ -3,7 +3,7 @@ class Solution {
         int r = matrix.length;
         int c =  matrix[0].length;
         for(int i=0;i<r;i++){
-            for(int j=0;j<i;j++){
+            for(int j=i+1;j<r;j++){
                 int temp = matrix[i][j];
                 matrix[i][j] =  matrix[j][i];
                 matrix[j][i] =  temp;
