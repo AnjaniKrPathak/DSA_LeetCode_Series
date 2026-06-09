@@ -1,22 +1,16 @@
 class Solution {
     public int majorityElement(int[] nums) {
-        Map<Integer,Integer> map = new HashMap<>();
-        for(int i =0;i<nums.length;i++){
-            
-                map.put(nums[i],map.getOrDefault(nums[i],0)+1);
-            
-            
+        int candidate =0;
+        int count =0;
+        for(int num:nums){
+            if(count == 0){
+                candidate  = num;
+            }
+
+            count += (num == candidate)? 1:-1; 
         }
 
-        Map.Entry<Integer, Integer> result =
-        map.entrySet()
-           .stream()
-           .max(Map.Entry.comparingByValue())
-           .get();
-           
-
-        return result.getKey();                             
-                                         
+        return candidate;
         
     }
 }
