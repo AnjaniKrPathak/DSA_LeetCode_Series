@@ -5,10 +5,13 @@ class Solution {
         return result;
     }
     void helper(int[] nums,int index,List<Integer> current,List<List<Integer>> result){
-        if(!result.contains(current)){
-             result.add(new ArrayList<>(current));
+           if(!result.contains(current)){
+            result.add(new ArrayList<>(current));
 
-        }
+           }
+             
+
+       
        
         for(int i=index;i<nums.length;i++){
             current.add(nums[i]);
