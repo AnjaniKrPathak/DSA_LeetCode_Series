@@ -17,16 +17,14 @@ class Solution {
             n--;
         }
         if(fast == null){
-            return head.next;
+           return  head.next;
         }
-        while(fast.next != null){
+        while(fast.next !=  null){
             slow = slow.next;
             fast = fast.next;
         }
-        slow.next =slow.next.next;
-
+        slow.next = slow.next.next;
         return head;
-
         
     }
 }
