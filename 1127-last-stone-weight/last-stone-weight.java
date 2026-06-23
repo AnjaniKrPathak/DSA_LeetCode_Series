@@ -1,20 +1,20 @@
 class Solution {
     public int lastStoneWeight(int[] stones) {
-        PriorityQueue<Integer> maxHeap  =  new PriorityQueue<>(Collections.reverseOrder());
-        for(int i=0;i<stones.length;i++){
-            maxHeap.offer(stones[i]);
-
-        }
-        // Smash Weith
-        while(maxHeap.size() >1) {
-            int x = maxHeap.poll();
-            int y= maxHeap.poll();
-            if(x !=  y){
-                maxHeap.offer(x-y);
+        PriorityQueue<Integer> maxHeap = new PriorityQueue<>(
+            Collections.reverseOrder());
+            for(int stone:stones){
+                maxHeap.offer(stone);
             }
-        }
-
-        return maxHeap.isEmpty()? 0:maxHeap.peek();
+            // check max weight
+            while(maxHeap.size() >1) {
+                int x = maxHeap.poll();
+                int y = maxHeap.poll();
+                if(x != y){
+                    maxHeap.offer(x-y);
+                }
+            }
         
+
+        return maxHeap.size() == 0? 0:maxHeap.peek();
     }
 }
