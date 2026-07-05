@@ -1,21 +1,27 @@
 class Solution {
     public int search(int[] nums, int target) {
-
-        int low =0;
-        int heigh = nums.length-1;
-        while(low <= heigh){
-            int mid = (low +heigh )/2;
-            if(nums[mid] == target){
+        // starting index
+        int left =  0;
+        //  end index
+        int right = nums.length-1;
+        while(left <= right){
+            int mid = left + (right-left) / 2;
+            if(nums[mid] ==  target){
                 return mid;
             }
-            else if(nums[mid] < target){
-                low = mid +1;
+            // target is small then skip right part
+            else if(target < nums[mid]){
+                //  update right value
+                right = mid-1;
+               
             }
             else{
-                heigh = mid-1;
+                //update left value
+                left =mid +1;
+                
             }
-        }
 
+        }
 
         return -1;
         
