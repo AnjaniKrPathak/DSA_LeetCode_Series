@@ -30,6 +30,7 @@ class Solution {
            
             if(i ==  targetSum){
                 ans  = true;
+                return;
                
             }  
 
