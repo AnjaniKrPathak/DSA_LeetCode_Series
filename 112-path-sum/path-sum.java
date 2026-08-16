@@ -14,39 +14,28 @@
  * }
  */
 class Solution {
+    
     boolean ans = false;
-    int totalSum  = 0;
     public boolean hasPathSum(TreeNode root, int targetSum) {
-        Func(root,0,targetSum);
         
-       
+        pathSum(root,0,targetSum);
         return ans;
-   
-        
-        
     }
-     void Func(TreeNode root,int i ,int targetSum){
-       
-        if(root ==  null){
-            return ;
+    private void pathSum(TreeNode root,int i,int targetSum){
+        if(root == null){
+            return;
         }
-        i += root.val;
-
-       
-        
+         i += root.val;
         if(root.left == null && root.right == null){
-
-            totalSum += i;
-            System.out.println(totalSum);
-          
-          if(i == targetSum){
-            ans = true;
-          }
-            
+           
+            if(i ==  targetSum){
+                ans  = true;
+               
+            }  
 
         }
-        Func(root.left,i,targetSum);
-        Func(root.right,i,targetSum);
 
+        pathSum(root.left,i,targetSum);
+        pathSum(root.right,i,targetSum);
     }
 }
