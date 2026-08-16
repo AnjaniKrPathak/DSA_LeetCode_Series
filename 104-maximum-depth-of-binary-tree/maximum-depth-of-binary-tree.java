@@ -20,8 +20,8 @@ class Solution {
         }
         int leftHeight = maxDepth(root.left);
         int rightHeight= maxDepth(root.right);
-        int maxDepth = Math.max(leftHeight,rightHeight);
-        return maxDepth+1;
+        int maxDepth = Math.max(leftHeight,rightHeight)+1;
+        return maxDepth;
         
     }
 }
